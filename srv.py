@@ -1,7 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-
 from io import BytesIO
-
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
@@ -26,5 +24,5 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('0.0.0.0', $PORT), SimpleHTTPRequestHandler)
 httpd.serve_forever()
