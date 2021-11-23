@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
+import  subprocess
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
@@ -24,5 +25,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('0.0.0.0', $PORT), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', "$PORT"), SimpleHTTPRequestHandler)
 httpd.serve_forever()
+
+
+subprocess.Popen(['python3', 'run.py'])
