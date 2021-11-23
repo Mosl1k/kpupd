@@ -1,6 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
-import  subprocess
+import  subprocess, sys
 
 subprocess.Popen(['python3', 'run.py'])
 
