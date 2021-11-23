@@ -4,6 +4,10 @@ import  subprocess
 
 subprocess.Popen(['python3', 'run.py'])
 
+if len (sys.argv) > 1:
+    print(sys.argv[1])
+    port = int(sys.argv[1])      
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     # определяем метод `do_GET` 
@@ -27,7 +31,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('localhost', $PORT), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', port), SimpleHTTPRequestHandler)
 httpd.serve_forever()
 
 
