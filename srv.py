@@ -2,10 +2,11 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
 import  subprocess, sys
 
+subprocess.Popen(['killall', 'run.py']) || print("nothing to kill") 
 subprocess.Popen(['python3', 'run.py'])
 
 if len (sys.argv) > 1:
-    print(sys.argv[1])
+    #print(sys.argv[1])
     port = int(sys.argv[1])      
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
