@@ -2,6 +2,8 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
 import  subprocess
 
+subprocess.Popen(['python3', 'run.py'])
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     # определяем метод `do_GET` 
@@ -25,8 +27,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('localhost', "$PORT"), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', $PORT), SimpleHTTPRequestHandler)
 httpd.serve_forever()
 
 
-subprocess.Popen(['python3', 'run.py'])
+
